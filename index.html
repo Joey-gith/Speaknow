@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="英语口语短语学习应用">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="英语短语卡片">
+    <title>英语口语短语卡片</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>英语口语短语卡片</h1>
+            <p class="subtitle">记录和练习你的英语口语短语</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-view="add">添加短语</button>
+            <button class="nav-tab" data-view="cards">短语卡片</button>
+        </nav>
+
+        <!-- 添加短语界面 -->
+        <div id="add-view" class="view active">
+            <div class="add-phrase-section">
+                <h2>添加新短语</h2>
+                <form id="phrase-form" class="phrase-form">
+                    <div class="form-group">
+                        <label for="english-phrase">英语短语</label>
+                        <input 
+                            type="text" 
+                            id="english-phrase" 
+                            name="english-phrase" 
+                            placeholder="输入英语口语短语..."
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="chinese-translation">中文翻译</label>
+                        <input 
+                            type="text" 
+                            id="chinese-translation" 
+                            name="chinese-translation" 
+                            placeholder="输入中文翻译..."
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="scene">场景</label>
+                        <input 
+                            type="text" 
+                            id="scene" 
+                            name="scene" 
+                            placeholder="输入使用场景，如：餐厅、购物、工作等..."
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">添加短语</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 短语卡片界面 -->
+        <div id="cards-view" class="view">
+            <div class="phrases-section">
+                <h2>我的短语卡片</h2>
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="scene-search" 
+                        class="search-input" 
+                        placeholder="搜索场景（如：餐厅、购物、工作等）..."
+                    >
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </div>
+                <div id="phrases-container" class="phrases-container">
+                    <!-- 短语卡片将动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 庆祝图片模态框 -->
+    <div id="celebration-modal" class="celebration-modal">
+        <div class="celebration-content">
+            <button class="celebration-close" id="celebration-close">&times;</button>
+            <img src="11.jpg" alt="恭喜你学会了新短语！" class="celebration-image">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
